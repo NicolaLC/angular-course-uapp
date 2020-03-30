@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Ricerca Università</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" name="name" id="name" [(ngModel)]="searchFilter.name">
+    </div>
+    <div class="form-group">
+      <label for="country">Stato</label>
+      <select type="text" class="form-control" name="country" id="country" [(ngModel)]="searchFilter.country">
+        <option value="Italy">Italia</option>
+        <option value="England">Inghilterra</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="search($event)">Cerca 🔍</button>
+  </form>
+  <p>SearchFilter name: {{searchFilter.name}}</p>
+  <p>SearchFilter country: {{searchFilter.country}}</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Dettaglio</th>
+        <th>Nome</th>
+        <th>Stato</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="universities && universities.length">
+        <tr *ngFor="let university of universities">
+          <td><a href="#">Più informazioni</a></td>
+          <td>{{university.name}}</td>
+          <td>{{university.country}}</td>
+        </tr>
+      </ng-container>
+      <tr *ngIf="!universities || !universities.length">
+        <td colspan="3">Nessun dato trovato.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
