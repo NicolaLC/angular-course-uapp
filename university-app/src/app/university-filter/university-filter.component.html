@@ -1,0 +1,14 @@
+<form>
+  <div class="form-group">
+    <label for="name">Nome</label>
+    <input type="text" class="form-control" name="name" id="name" [(ngModel)]="searchFilter.name">
+  </div>
+  <div class="form-group">
+    <label for="country">Stato</label>
+    <select type="text" class="form-control" name="country" id="country" [(ngModel)]="searchFilter.country">
+      <option value="Italy">Italia</option>
+      <option value="England">Inghilterra</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success" (click)="search.emit($event)">Cerca 🔍</button>
+</form>

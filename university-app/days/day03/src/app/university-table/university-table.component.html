@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Dettaglio</th>
+      <th>Nome</th>
+      <th>Stato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="universities && universities.length">
+      <tr *ngFor="let university of universities">
+        <td><a href="#">Più informazioni</a></td>
+        <td>{{university.name}}</td>
+        <td>{{university.country}}</td>
+      </tr>
+    </ng-container>
+    <tr *ngIf="!universities || !universities.length">
+      <td colspan="3">Nessun dato trovato.</td>
+    </tr>
+  </tbody>
+</table>
