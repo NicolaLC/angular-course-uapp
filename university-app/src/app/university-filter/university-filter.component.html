@@ -10,5 +10,13 @@
       <option value="England">Inghilterra</option>
     </select>
   </div>
+  <div class="form-group">
+    <label for="state-province">Stato/Provincia</label>
+    <input type="text" class="form-control" name="state-province" id="state-province" [(ngModel)]="searchFilter.stateProvince">
+  </div>
+  <div class="form-group">
+    <label for="alpha-code">Alpha Two Code</label>
+    <input type="text" class="form-control" name="alpha-code" id="alpha-code" [(ngModel)]="searchFilter.alphaTwoCode">
+  </div>
   <button type="submit" class="btn btn-success" (click)="search.emit($event)">Cerca 🔍</button>
 </form>
