@@ -1,4 +1,6 @@
 export class SearchFilter {
   name: string;
-  country: string;
+  country?: string;
+  stateProvince?: string;
+  alphaTwoCode?: string;
 }
